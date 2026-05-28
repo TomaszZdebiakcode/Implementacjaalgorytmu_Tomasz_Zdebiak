@@ -1,21 +1,87 @@
-# Python Template
+# Implementacja algorytmu A* do znajdowania najkrótszej ścieżki
 
-[![python](https://img.shields.io/badge/Python-3.14-3776AB.svg?style=flat&logo=python&logoColor=white)](https://www.python.org)
-[![ruff](https://github.com/wnowicki/pytemp/workflows/Ruff/badge.svg)](https://github.com/wnowicki/pytemp/actions?query=branch%3Amain)
-[![pytest](https://github.com/wnowicki/pytemp/workflows/Pytest/badge.svg)](https://github.com/wnowicki/pytemp/actions?query=branch%3Amain)
-[![pylint](https://github.com/wnowicki/pytemp/workflows/Pylint/badge.svg)](https://github.com/wnowicki/pytemp/actions?query=branch%3Amain)
-[![markdown](https://github.com/wnowicki/pytemp/workflows/Markdown%20Lint/badge.svg)](https://github.com/wnowicki/pytemp/actions?query=branch%3Amain)
-[![License: GPLv3](https://img.shields.io/badge/License-MIT-blue.svg)](https://license.md/licenses/mit-license/)
+## Opis projektu
 
-## Test
+Projekt implementuje algorytm A* (A-star) służący do znajdowania najkrótszej ścieżki w środowisku siatkowym (grid).
 
-```shell
-uv run pytest
-```
+Dodatkowo projekt zawiera porównanie działania algorytmu A* z algorytmem BFS.
 
-## Security
-
-If you discover any security-related issues, please email [email](mailto:email) instead of using the issue tracker.
+Projekt został wykonany w ramach przedmiotu **Sztuczna Inteligencja**.
 
 ---
-Copyright (c) [year] [fullname]
+
+## Technologie
+
+* Python
+* matplotlib
+* numpy
+
+---
+
+## Funkcjonalności
+
+* implementacja algorytmu A*
+* implementacja BFS
+* generowanie planszy z przeszkodami
+* wizualizacja znalezionej ścieżki
+* pomiar czasu działania algorytmów
+* porównanie liczby odwiedzonych węzłów
+
+---
+
+## Struktura projektu
+
+```text
+app/
+├── astar.py
+├── bfs.py
+├── grid.py
+├── main.py
+├── visualization.py
+└── experiments.py
+```
+
+---
+
+## Uruchomienie projektu
+
+Instalacja bibliotek:
+
+```bash
+pip install matplotlib numpy pytest
+```
+
+Uruchomienie programu:
+
+```bash
+python app/main.py
+```
+
+---
+
+## Testy
+
+Uruchomienie testów:
+
+```bash
+pytest
+```
+
+---
+
+## Przykładowe wyniki
+
+Program wyświetla:
+
+* długość ścieżki,
+* liczbę odwiedzonych węzłów,
+* czas działania algorytmów.
+
+Dodatkowo generowana jest wizualizacja planszy.
+
+---
+
+## Autor
+
+Tomasz Zdebiak
+

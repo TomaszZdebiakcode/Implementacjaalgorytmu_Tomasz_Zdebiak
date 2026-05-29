@@ -4,17 +4,18 @@
 
 Projekt implementuje algorytm A* (A-star) służący do znajdowania najkrótszej ścieżki w środowisku siatkowym (grid).
 
-Dodatkowo projekt zawiera porównanie działania algorytmu A* z algorytmem BFS.
+Dodatkowo zaimplementowano algorytm BFS w celu porównania wydajności obu metod.
 
 Projekt został wykonany w ramach przedmiotu **Sztuczna Inteligencja**.
 
 ---
 
-## Technologie
+## Zastosowane technologie
 
 * Python
 * matplotlib
 * numpy
+* pytest
 
 ---
 
@@ -26,6 +27,7 @@ Projekt został wykonany w ramach przedmiotu **Sztuczna Inteligencja**.
 * wizualizacja znalezionej ścieżki
 * pomiar czasu działania algorytmów
 * porównanie liczby odwiedzonych węzłów
+* eksperymenty dla różnych rozmiarów plansz
 
 ---
 
@@ -35,23 +37,30 @@ Projekt został wykonany w ramach przedmiotu **Sztuczna Inteligencja**.
 app/
 ├── astar.py
 ├── bfs.py
+├── charts.py
+├── experiments.py
 ├── grid.py
 ├── main.py
-├── visualization.py
-└── experiments.py
+└── visualization.py
+
+tests/
+├── test_astar.py
+└── test_bfs.py
 ```
 
 ---
 
-## Uruchomienie projektu
+## Instalacja
 
-Instalacja bibliotek:
+Instalacja wymaganych bibliotek:
 
 ```bash
-pip install matplotlib numpy pytest
+pip install matplotlib numpy pytest pytest-cov
 ```
 
-Uruchomienie programu:
+---
+
+## Uruchomienie programu
 
 ```bash
 python app/main.py
@@ -59,29 +68,38 @@ python app/main.py
 
 ---
 
-## Testy
-
-Uruchomienie testów:
+## Uruchomienie eksperymentów
 
 ```bash
-pytest
+python app/experiments.py
+```
+
+---
+
+## Uruchomienie testów
+
+```bash
+python -m pytest
 ```
 
 ---
 
 ## Przykładowe wyniki
 
-Program wyświetla:
+### A*
 
-* długość ścieżki,
-* liczbę odwiedzonych węzłów,
-* czas działania algorytmów.
+* visited nodes: 343
+* path length: 39
 
-Dodatkowo generowana jest wizualizacja planszy.
+### BFS
+
+* visited nodes: 378
+* path length: 39
+
+Algorytm A* odwiedzał mniej węzłów niż BFS dzięki zastosowaniu heurystyki Manhattan.
 
 ---
 
 ## Autor
 
 Tomasz Zdebiak
-

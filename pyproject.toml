@@ -1,10 +1,15 @@
 [project]
 name = "pytemp"
-description = "A simple Python package template"
+description = "Implementacja algorytmu A* dla robota obsługującego automaty vendingowe"
 dynamic = ["version"]
-requires-python = ">=3.14"
+requires-python = ">=3.12"
 readme = "README.md"
 license = { file = "LICENSE.md"}
+
+dependencies = [
+    "matplotlib",
+    "numpy",
+]
 
 [project.urls]
 "Homepage" = "https://github.com/wnowicki/pytemp"

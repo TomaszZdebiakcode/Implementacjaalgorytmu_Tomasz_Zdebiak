@@ -8,40 +8,74 @@ import time
 
 def main():
 
-    grid = Grid(20, 20, obstacle_prob=0.05)
+    warehouse = Grid(20, 20, obstacle_prob=0.05)
 
-    start = (0, 0)
-    goal = (19, 19)
+    robot_position = (0, 0)
+    vending_machine = (19, 19)
 
-    grid.grid[0][0] = 0
-    grid.grid[19][19] = 0
+    warehouse.grid[0][0] = 0
+    warehouse.grid[19][19] = 0
 
     t1 = time.perf_counter()
-    result_a = astar(grid, start, goal)
+    result_astar = astar(
+        warehouse,
+        robot_position,
+        vending_machine,
+    )
     t2 = time.perf_counter()
 
     t3 = time.perf_counter()
-    result_b = bfs(grid, start, goal)
+    result_bfs = bfs(
+        warehouse,
+        robot_position,
+        vending_machine,
+    )
     t4 = time.perf_counter()
 
-    if result_a and result_b:
+    if result_astar and result_bfs:
 
         print("=== A* ===")
-        print("Visited nodes:", result_a["visited"])
-        print("Path length:", len(result_a["path"]))
-        print("Time:", t2 - t1)
+        print(
+            "Visited locations:",
+            result_astar["visited"],
+        )
+        print(
+            "Route length:",
+            len(result_astar["path"]),
+        )
+        print(
+            "Execution time:",
+            t2 - t1,
+        )
 
         print()
 
         print("=== BFS ===")
-        print("Visited nodes:", result_b["visited"])
-        print("Path length:", len(result_b["path"]))
-        print("Time:", t4 - t3)
+        print(
+            "Visited locations:",
+            result_bfs["visited"],
+        )
+        print(
+            "Route length:",
+            len(result_bfs["path"]),
+        )
+        print(
+            "Execution time:",
+            t4 - t3,
+        )
 
-        draw_grid(grid, result_a["path"])
+        print()
+        print("Route to vending machine found!")
+
+        draw_grid(
+            warehouse,
+            result_astar["path"],
+        )
 
     else:
-        print("No path found")
+        print(
+            "Robot could not reach the vending machine",
+        )
 
 
 if __name__ == "__main__":

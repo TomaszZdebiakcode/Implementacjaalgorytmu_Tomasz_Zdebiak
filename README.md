@@ -10,6 +10,14 @@ Projekt został wykonany w ramach przedmiotu **Sztuczna Inteligencja**.
 
 ---
 
+# Zastosowanie praktyczne
+
+Projekt przedstawia system planowania trasy dla robota logistycznego obsługującego automaty vendingowe.
+
+Robot porusza się po magazynie i musi dostarczyć napoje do wybranego automatu vendingowego. Magazyn zawiera przeszkody w postaci regałów i elementów infrastruktury.
+
+Algorytm A* wyznacza najkrótszą trasę pomiędzy pozycją robota a docelowym automatem. Dodatkowo zaimplementowano algorytm BFS w celu porównania efektywności obu metod.
+
 ## Zastosowane technologie
 
 * Python
@@ -57,6 +65,18 @@ Instalacja wymaganych bibliotek:
 ```bash
 pip install matplotlib numpy pytest pytest-cov
 ```
+## Instalacja UV
+python -m pip install uv
+
+python -m uv sync
+
+## Uruchomienie
+
+python -m uv run python app/main.py
+
+## Testy
+
+python -m uv run pytest
 
 ---
 
